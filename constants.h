@@ -1,5 +1,5 @@
 //
-//  intervals.h
+//  constants.h
 //  theory-helper
 //
 //  Created by Gordon Lewis on 7/13/22.
@@ -29,6 +29,17 @@ using namespace std;
  I'm doing separate arrays for the same keys written differently (like C# and Db)
  */
 
+//Here are a few constants for chord types
+const string MINOR = "minor";
+const string MAJOR = "major";
+const string DOMINANT = "dominant";
+
+//Here are the acceptable chords/notes for checking
+const int VALID_NOTES_SIZE = 21;
+const string VALID_NOTES[] = {"c", "b#", "c#", "db", "d", "d#", "eb", "e", "fb", "f", "e#", "f#", "gb", "g", "g#", "ab", "a", "bb", "a#", "b", "cb"};
+
+
+const int INTERVAL_ARR_SIZE = 21;
 //intervals for the key of C
 const pair<string, string> C_NATURAL[] = {
     {"P1", "c"}, {"P12", "b#"}, {"m2", "c#"}, {"m22", "db"}, {"M2", "d"}, {"m3", "d#"}, {"m32", "eb"},

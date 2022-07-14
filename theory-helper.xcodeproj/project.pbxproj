@@ -24,7 +24,7 @@
 
 /* Begin PBXFileReference section */
 		F8392A1D287E3652001A2667 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		F858F579287F57DE009766E5 /* intervals.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = intervals.h; sourceTree = "<group>"; };
+		F858F579287F57DE009766E5 /* constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = constants.h; sourceTree = "<group>"; };
 		F8DC9844287E35A100069524 /* theory-helper */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "theory-helper"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -42,7 +42,7 @@
 		F8DC983B287E35A100069524 = {
 			isa = PBXGroup;
 			children = (
-				F858F579287F57DE009766E5 /* intervals.h */,
+				F858F579287F57DE009766E5 /* constants.h */,
 				F8392A1D287E3652001A2667 /* main.cpp */,
 				F8DC9845287E35A100069524 /* Products */,
 			);
