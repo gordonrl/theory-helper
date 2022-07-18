@@ -29,6 +29,14 @@ using namespace std;
  I'm doing separate arrays for the same keys written differently (like C# and Db)
  */
 
+/*
+ There also needs to be a pointer to each array because we need to be able to read in
+ the name of a chord and determine which array to use.
+ 
+ This can be done by having an array of pairs whose first value is a chord name and whose
+ second value is a pointer to the correct array
+ */
+
 //Here are a few constants for chord types
 const string MINOR = "minor";
 const string MAJOR = "major";
@@ -46,6 +54,7 @@ const pair<string, string> C_NATURAL[] = {
     {"M3", "e"}, {"M32", "fb"}, {"P4", "f"}, {"P42", "e#"}, {"T", "f#"}, {"T2", "Gb"}, {"P5", "g"},
     {"m6", "ab"}, {"m62", "g#"}, {"M6", "a"}, {"m7", "bb"}, {"m72", "a#"}, {"M7", "b"}, {"M72", "cb"}
 };
+const pair<string, string> *C_NAT_PTR = C_NATURAL;
 
 //intervals for the key of B#
 const pair<string, string> B_SHARP[] = {
@@ -53,6 +62,7 @@ const pair<string, string> B_SHARP[] = {
     {"M3", "e"}, {"M32", "fb"}, {"P4", "f"}, {"P42", "e#"}, {"T", "f#"}, {"T2", "Gb"}, {"P5", "g"},
     {"m6", "ab"}, {"m62", "g#"}, {"M6", "a"}, {"m7", "bb"}, {"m72", "a#"}, {"M7", "b"}, {"M72", "cb"}
 };
+const pair<string, string> *B_SHARP_PTR = B_SHARP;
 
 //intervals for the key of C#
 const pair<string, string> C_SHARP[] = {
@@ -60,6 +70,7 @@ const pair<string, string> C_SHARP[] = {
     {"M3", "f"}, {"M32", "e#"}, {"P4", "f#"}, {"P42", "gb"}, {"T", "g"}, {"P5", "g#"}, {"P52", "ab"},
     {"m6", "a"}, {"M6", "a#"}, {"M62", "bb"}, {"m7", "b"}, {"m72", "cb"}, {"M7", "c"}, {"M72", "b#"}
 };
+const pair<string, string> *C_SHARP_PTR = C_SHARP;
 
 //intervals for the key of Db
 const pair<string, string> D_FLAT[] = {
@@ -67,6 +78,7 @@ const pair<string, string> D_FLAT[] = {
     {"M3", "f"}, {"M32", "e#"}, {"P4", "f#"}, {"P42", "gb"}, {"T", "g"}, {"P5", "g#"}, {"P52", "ab"},
     {"m6", "a"}, {"M6", "a#"}, {"M62", "bb"}, {"m7", "b"}, {"m72", "cb"}, {"M7", "c"}, {"M72", "b#"}
 };
+const pair<string, string> *D_FLAT_PTR = D_FLAT;
 
 //intervals for the key of D
 const pair<string, string> D_NATURAL[] = {
@@ -74,6 +86,7 @@ const pair<string, string> D_NATURAL[] = {
     {"M3", "f#"}, {"M32", "gb"}, {"P4", "g"}, {"T", "g#"}, {"T2", "ab"}, {"P5", "a"}, {"m6", "a#"},
     {"m62", "bb"}, {"M6", "b"}, {"M62", "cb"}, {"m7", "b#"}, {"m72", "c"}, {"M7", "c#"}, {"M72", "db"}
 };
+const pair<string, string> *D_NAT_PTR = D_NATURAL;
 
 //intervals for the key of Eb
 const pair<string, string> E_FLAT[] = {
@@ -81,6 +94,7 @@ const pair<string, string> E_FLAT[] = {
     {"M3", "g"}, {"P4", "ab"}, {"P42", "g#"}, {"T", "a"}, {"P5", "bb"}, {"P52", "a#"}, {"m6", "b"},
     {"m62", "cb"}, {"M6", "c"}, {"M62", "b#"}, {"m7", "db"}, {"m72", "c#"}, {"M7", "d"}
 };
+const pair<string, string> *E_FLAT_PTR = E_FLAT;
 
 //intervals for the key of D#
 const pair<string, string> D_SHARP[] = {
@@ -88,6 +102,7 @@ const pair<string, string> D_SHARP[] = {
     {"M3", "g"}, {"P4", "ab"}, {"P42", "g#"}, {"T", "a"}, {"P5", "bb"}, {"P52", "a#"}, {"m6", "b"},
     {"m62", "cb"}, {"M6", "c"}, {"M62", "b#"}, {"m7", "db"}, {"m72", "c#"}, {"M7", "d"}
 };
+const pair<string, string> *D_SHARP_PTR = D_SHARP;
 
 //intervals for the key of E
 const pair<string, string> E_NATURAL[] = {
@@ -95,6 +110,7 @@ const pair<string, string> E_NATURAL[] = {
     {"M3", "g#"}, {"M32", "ab"}, {"P4", "a"}, {"T", "a#"}, {"T2", "bb"}, {"P5", "b"}, {"P52", "cb"}, {"m6", "c"},
     {"m62", "b#"}, {"M6", "c#"}, {"M62", "db"}, {"m7", "d"}, {"M7", "d#"}, {"M72", "eb"}
 };
+const pair<string, string> *E_NAT_PTR = E_NATURAL;
 
 //intervals for the key of Fb
 const pair<string, string> F_FLAT[] = {
@@ -102,6 +118,7 @@ const pair<string, string> F_FLAT[] = {
     {"M3", "g#"}, {"M32", "ab"}, {"P4", "a"}, {"T", "a#"}, {"T2", "bb"}, {"P5", "b"}, {"P52", "cb"}, {"m6", "c"},
     {"m62", "b#"}, {"M6", "c#"}, {"M62", "db"}, {"m7", "d"}, {"M7", "d#"}, {"M72", "eb"}
 };
+const pair<string, string> *F_FLAT_PTR = F_FLAT;
 
 //intervals for the key of F
 const pair<string, string> F_NATURAL[] = {
@@ -109,6 +126,7 @@ const pair<string, string> F_NATURAL[] = {
     {"M3", "a"}, {"P4", "bb"}, {"P42", "a#"}, {"T", "b"}, {"T2", "cb"}, {"P5", "c"}, {"P52", "b#"}, {"m6", "c#"},
     {"m62", "db"}, {"M6", "d"}, {"m7", "eb"}, {"m72", "d#"}, {"M7", "e"}, {"M72", "fb"}
 };
+const pair<string, string> *F_NAT_PTR = F_NATURAL;
 
 //intervals for the key of E#
 const pair<string, string> E_SHARP[] = {
@@ -116,6 +134,7 @@ const pair<string, string> E_SHARP[] = {
     {"M3", "a"}, {"P4", "bb"}, {"P42", "a#"}, {"T", "b"}, {"T2", "cb"}, {"P5", "c"}, {"P52", "b#"}, {"m6", "c#"},
     {"m62", "db"}, {"M6", "d"}, {"m7", "eb"}, {"m72", "d#"}, {"M7", "e"}, {"M72", "fb"}
 };
+const pair<string, string> *E_SHARP_PTR = E_SHARP;
 
 //intervals for the key of F#
 const pair<string, string> F_SHARP[] = {
@@ -123,6 +142,7 @@ const pair<string, string> F_SHARP[] = {
     {"M32", "a#"}, {"P4", "b"}, {"P42", "cb"}, {"T", "c"}, {"T2", "b#"}, {"P5", "c#"}, {"P52", "db"}, {"m6", "d"},
     {"M6", "eb"}, {"M62", "d#"}, {"m7", "e"}, {"m72", "fb"}, {"M7", "f"}, {"M72", "e#"}
 };
+const pair<string, string> *F_SHARP_PTR = F_SHARP;
 
 //intervals for the key of Gb
 const pair<string, string> G_FLAT[] = {
@@ -130,6 +150,7 @@ const pair<string, string> G_FLAT[] = {
     {"M32", "a#"}, {"P4", "b"}, {"P42", "cb"}, {"T", "c"}, {"T2", "b#"}, {"P5", "c#"}, {"P52", "db"}, {"m6", "d"},
     {"M6", "eb"}, {"M62", "d#"}, {"m7", "e"}, {"m72", "fb"}, {"M7", "f"}, {"M72", "e#"}
 };
+const pair<string, string> *G_FLAT_PTR = G_FLAT;
 
 //intervals for the key of G
 const pair<string, string> G_NATURAL[] = {
@@ -137,6 +158,7 @@ const pair<string, string> G_NATURAL[] = {
     {"M32", "cb"}, {"P4", "c"}, {"P42", "b#"}, {"T", "c#"}, {"T2", "db"}, {"P5", "d"}, {"m6", "eb"}, {"m62", "d#"},
     {"M6", "e"}, {"M62", "fb"}, {"m7", "f"}, {"m72", "e#"}, {"M7", "f#"}, {"M72", "gb"}
 };
+const pair<string, string> *G_NAT_PTR = G_NATURAL;
 
 //intervals for the key of Ab
 const pair<string, string> A_FLAT[] = {
@@ -144,6 +166,7 @@ const pair<string, string> A_FLAT[] = {
     {"M32", "b#"}, {"P4", "c#"}, {"P42", "db"}, {"T", "d"}, {"P5", "eb"}, {"P52", "d#"}, {"m6", "e"}, {"m62", "fb"},
     {"M6", "e#"}, {"M62", "f"}, {"m7", "f#"}, {"m72", "gb"}, {"M7", "g"}
 };
+const pair<string, string> *A_FLAT_PTR = A_FLAT;
 
 //intervals for the key of G#
 const pair<string, string> G_SHARP[] = {
@@ -151,6 +174,7 @@ const pair<string, string> G_SHARP[] = {
     {"M32", "b#"}, {"P4", "c#"}, {"P42", "db"}, {"T", "d"}, {"P5", "eb"}, {"P52", "d#"}, {"m6", "e"}, {"m62", "fb"},
     {"M6", "e#"}, {"M62", "f"}, {"m7", "f#"}, {"m72", "gb"}, {"M7", "g"}
 };
+const pair<string, string> *G_SHARP_PTR = G_SHARP;
 
 //intervals for the key of A
 const pair<string, string> A_NATURAL[] = {
@@ -158,6 +182,7 @@ const pair<string, string> A_NATURAL[] = {
     {"M32", "db"}, {"P4", "d"}, {"T", "eb"}, {"T2", "d#"}, {"P5", "e"}, {"P52", "fb"}, {"m6", "e#"}, {"m62", "f"},
     {"M6", "f#"}, {"M62", "gb"}, {"m7", "g"}, {"M7", "g#"}, {"M72", "ab"}
 };
+const pair<string, string> *A_NAT_PTR = A_NATURAL;
 
 //intervals for the key of Bb
 const pair<string, string> B_FLAT[] = {
@@ -165,6 +190,7 @@ const pair<string, string> B_FLAT[] = {
     {"M3", "d"}, {"P4", "eb"}, {"P42", "d#"}, {"T", "e"}, {"T2", "fb"}, {"P5", "f"}, {"m6", "gb"}, {"m62", "f#"}, {"M6", "g"},
     {"m7", "ab"}, {"m72", "g#"}, {"M7", "a"}
 };
+const pair<string, string> *B_FLAT_PTR = B_FLAT;
 
 //intervals for the key of A#
 const pair<string, string> A_SHARP[] = {
@@ -172,6 +198,7 @@ const pair<string, string> A_SHARP[] = {
     {"M3", "d"}, {"P4", "eb"}, {"P42", "d#"}, {"T", "e"}, {"T2", "fb"}, {"P5", "f"}, {"m6", "gb"}, {"m62", "f#"}, {"M6", "g"},
     {"m7", "ab"}, {"m72", "g#"}, {"M7", "a"}
 };
+const pair<string, string> *A_SHARP_PTR = A_SHARP;
 
 //intervals for the key of B
 const pair<string, string> B_NATURAL[] = {
@@ -179,5 +206,8 @@ const pair<string, string> B_NATURAL[] = {
     {"M32", "eb"}, {"P4", "e"}, {"P42", "fb"}, {"T", "e#"}, {"T2", "f"}, {"P5", "f#"}, {"P52", "gb"}, {"m6", "g"},
     {"M6", "g#"}, {"M62", "ab"}, {"m7", "a"}, {"M7", "a#"}, {"M72", "bb"}
 };
+const pair<string, string> *B_NAT_PTR = B_NATURAL;
+
+//MAKE ARRAY OF PAIRS OR WHATEVER
 
 #endif /* intervals_h */

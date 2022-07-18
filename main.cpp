@@ -8,7 +8,6 @@
 #include <iostream>
 #include <utility>
 #include <string>
-#include <cctype>
 #include "constants.h"
 
 using namespace std;
@@ -27,6 +26,9 @@ string determineChordType(string chord);
 
 //EFFECTS: Checks that the inputted chords are valid
 bool isValid(string chord);
+
+//EFFECTS: Determines the interval between the two chords
+string determineInterval(string chord1, string chord2);
 
 int main() {
     cout << "Welcome to Theory Helper!" << endl << endl;
@@ -47,6 +49,8 @@ int main() {
     string chord1Type = determineChordType(chord1);
     string chord2Type = determineChordType(chord2);
     
+    //step 3 is to determine the interval between the chords
+    //The interval will always be read as the distance from the first chord to the second
     
     return 0;
 }
@@ -73,7 +77,8 @@ bool isValid(string chord) {
     //string of 1 or 2 letters that checks chord type
     string checker;
     if (chord[1] == '#' || chord[1] == 'b') {
-        checker = tolower(chord[0]) + chord[1];
+        checker = tolower(chord[0]);
+        checker+= chord[1];
     }
     else {
         checker = tolower(chord[0]);
@@ -98,4 +103,9 @@ bool isValid(string chord) {
     else {
         return false;
     }
+}
+
+string determineInterval(string chord1, string chord2) {
+    //pretty simple function, just need to loop through the
+    //correct interval array until we find a match
 }
