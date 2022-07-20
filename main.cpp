@@ -21,6 +21,9 @@ using namespace std;
  But the nice thing is that if you go by half steps it shouldn't be too bad
  */
 
+//EFFECTS: Takes in a chord and returns the key of it
+string getKey(string chord);
+
 //EFFECTS: Takes in a chord and determines it's type (major, minor, etc.)
 string determineChordType(string chord);
 
@@ -55,6 +58,19 @@ int main() {
     return 0;
 }
 
+string getKey(string chord) {
+    string key;
+    if (chord[1] == '#' || chord[1] == 'b') {
+        key = tolower(chord[0]);
+        key+= chord[1];
+    }
+    else {
+        key = tolower(chord[0]);
+    }
+    
+    return key;
+}
+
 string determineChordType(string chord) {
     //the position in the string of the chord type depends on the chord
     //ex: c#m is indicated to be minor at chord[2], but cm is at chord[1]
@@ -75,14 +91,7 @@ string determineChordType(string chord) {
 
 bool isValid(string chord) {
     //string of 1 or 2 letters that checks chord type
-    string checker;
-    if (chord[1] == '#' || chord[1] == 'b') {
-        checker = tolower(chord[0]);
-        checker+= chord[1];
-    }
-    else {
-        checker = tolower(chord[0]);
-    }
+    string checker = getKey(chord);
     
     bool isValidNote = false;
     for (int i = 0; i < VALID_NOTES_SIZE; i++) {
@@ -106,8 +115,17 @@ bool isValid(string chord) {
 }
 
 string determineInterval(string chord1, string chord2) {
-    //pretty simple function, just need to loop through the
-    //correct interval array until we find a match
+    //step 1 is to get the key of our chords
+    string chord1Key = getKey(chord1);
+    string chord2Key = getKey(chord2);
+    
+    //step 2 is to find the right array to navigate through
+     pair<string, string> *arrPtr = NULL;
+    for (int i = 0; i < INTERVAL_ARR_SIZE; i++) {
+        if (chord1Key == ARRAY_KEY[i].first) {
+            //do a thing
+        }
+    }
     
     return "this will be fixed";
 }
