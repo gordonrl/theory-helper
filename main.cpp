@@ -108,4 +108,6 @@ bool isValid(string chord) {
 string determineInterval(string chord1, string chord2) {
     //pretty simple function, just need to loop through the
     //correct interval array until we find a match
+    
+    return "this will be fixed";
 }

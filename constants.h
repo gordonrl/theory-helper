@@ -208,6 +208,21 @@ const pair<string, string> B_NATURAL[] = {
 };
 const pair<string, string> *B_NAT_PTR = B_NATURAL;
 
-//MAKE ARRAY OF PAIRS OR WHATEVER
+//intervals for the key of Cb
+const pair<string, string> C_FLAT[] = {
+    {"P1", "b"}, {"P12", "cb"}, {"m2", "b#"}, {"m22", "c"}, {"M2", "c#"}, {"M22", "db"}, {"m3", "d"}, {"M3", "d#"},
+    {"M32", "eb"}, {"P4", "e"}, {"P42", "fb"}, {"T", "e#"}, {"T2", "f"}, {"P5", "f#"}, {"P52", "gb"}, {"m6", "g"},
+    {"M6", "g#"}, {"M62", "ab"}, {"m7", "a"}, {"M7", "a#"}, {"M72", "bb"}
+};
+const pair<string, string> *C_FLAT_PTR = C_FLAT;
+
+//Array of pairs and pointers so the program can find which array from above to us given a user-inputted string
+//DEREFERENCING THE POINTER COULD BE A FUTURE ISSUE!!!!!!!
+const pair<string, pair<string, string>> ARRAY_KEY[] = {
+    {"c", *C_NAT_PTR}, {"b#", *B_SHARP_PTR}, {"c#", *C_SHARP_PTR}, {"db", *D_FLAT_PTR}, {"d", *D_NAT_PTR}, {"d#", *D_SHARP_PTR},
+    {"eb", *E_FLAT_PTR}, {"e", *E_NAT_PTR}, {"fb", *F_FLAT_PTR}, {"f", *F_NAT_PTR}, {"e#", *E_SHARP_PTR}, {"f#", *F_SHARP_PTR},
+    {"gb", *G_FLAT_PTR}, {"g", *G_NAT_PTR}, {"g#", *G_SHARP_PTR}, {"ab", *A_FLAT_PTR}, {"a", *A_NAT_PTR}, {"a#", *A_SHARP_PTR},
+    {"bb", *B_FLAT_PTR}, {"b", *B_NAT_PTR}, {"cb", *C_FLAT_PTR}
+};
 
 #endif /* intervals_h */
