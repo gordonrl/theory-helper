@@ -132,6 +132,7 @@ string determineInterval(string chord1, string chord2) {
     for (int i = 0; i < INTERVAL_ARR_SIZE; i++) {
         if (chord1Key == ARRAY_KEY[i].first) {
             intervalMap = ARRAY_KEY[i].second;
+            i = INTERVAL_ARR_SIZE;
         }
     }
     
