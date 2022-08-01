@@ -86,12 +86,13 @@ string determineChordType(string chord) {
     if (chord[1] == '-' || chord[2] == '-' || chord[1] == 'm' || chord[2] == 'm') {
         return MINOR;
     }
-    else if (chord[1] == 'M' || chord[2] == 'M' || chord.length() == 1
-             || (chord.length() == 2 && (chord[1] == '#' || chord[2] == 'b'))) {
-        return MAJOR;
-    }
     else if (chord[1] == '7' || chord[2] == '7') {
         return DOMINANT;
+    }
+    else if (chord[1] == 'M' || chord[2] == 'M' ||
+             chord[1] == 'b' || chord[2] == '#' ||
+             chord.length() == 1) {
+        return MAJOR;
     }
     return "invalid chord type";
 }
