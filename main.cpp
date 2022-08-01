@@ -35,17 +35,22 @@ string determineInterval(string chord1, string chord2);
 
 int main() {
     cout << "Welcome to Theory Helper!" << endl << endl;
-    cout << "Please enter two chords, separated by a space, at a time." << endl << "Write minor chords as 'm', major chords as 'M', and dominant chords as '7'" << endl;
-    cout << "This is all that is supported at this time, but expansion will come!" << endl << endl;
+    cout << "Please enter two chords, each serparated by a space." << endl << "Indicate minor chords with '-' or 'm'," << endl
+    << "major chords with 'M', or with no symbol after the chord" << endl << "and dominant chords with '7'" << endl << endl;
+    cout << "These are all of the chord types supported at this time, but expansion will come!" << endl << endl;
     
+    //step 1 is to take read in chords from the user and make sure their valid
     string chord1; string chord2;
     cout << "Please enter chords: ";
-    cin >> chord1 >> chord2;
-    
-    //step 1 is to make sure each chord is valid
-    if (!isValid(chord1) || !isValid(chord2)) {
-        cout << "Please enter valid chords" << endl;
-        return 1;
+    //A while loop allows us to keep prompting user for valid chords rather than fully
+    //restarting the program if they enter an invalid chord
+    while (chord1 == "" || chord2 == "") {
+        cin >> chord1 >> chord2;
+        if (!isValid(chord1) || !isValid(chord2)) {
+            cout << "Please enter valid chords: ";
+            chord1 = "";
+            chord2 = "";
+        }
     }
     
     //step 2 is to determine the type of each chord
@@ -54,6 +59,7 @@ int main() {
     
     //step 3 is to determine the interval between the chords
     //The interval will always be read as the distance from the first chord to the second
+    cout << determineInterval(chord1, chord2) << endl << endl;
     
     return 0;
 }
@@ -77,10 +83,11 @@ string determineChordType(string chord) {
     
     //this is just a series of conditionals, which is good because it should be
     //easily expandable for more chord types in the future
-    if (chord[1] == 'm' || chord[2] == 'm') {
+    if (chord[1] == '-' || chord[2] == '-' || chord[1] == 'm' || chord[2] == 'm') {
         return MINOR;
     }
-    else if (chord[1] == 'M' || chord[2] == 'M') {
+    else if (chord[1] == 'M' || chord[2] == 'M' || chord.length() == 1
+             || (chord.length() == 2 && (chord[1] == '#' || chord[2] == 'b'))) {
         return MAJOR;
     }
     else if (chord[1] == '7' || chord[2] == '7') {
@@ -119,13 +126,19 @@ string determineInterval(string chord1, string chord2) {
     string chord1Key = getKey(chord1);
     string chord2Key = getKey(chord2);
     
+    
     //step 2 is to find the right array to navigate through
-     pair<string, string> *arrPtr = NULL;
+    map<string, string> intervalMap;
     for (int i = 0; i < INTERVAL_ARR_SIZE; i++) {
         if (chord1Key == ARRAY_KEY[i].first) {
-            //do a thing
+            intervalMap = ARRAY_KEY[i].second;
         }
     }
     
-    return "this will be fixed";
+    //step 3 is to use the key of chord2 to find
+    // the right interval in the map
+    string interval = intervalMap[chord2Key];
+    
+    return interval;
 }
+
