@@ -25,31 +25,29 @@ using namespace std;
 int main() {
     cout << "Welcome to Theory Helper!" << endl << endl;
     
-    cout << "Please enter two chords, each serparated by a space, followed by the tonic (root) chord." << endl << "Indicate minor chords with '-' or 'm'," << endl
+    cout << "Please enter two chords, each serparated by a space." << endl << "Indicate minor chords with '-' or 'm'," << endl
     << "major chords with 'M', or with no symbol after the chord" << endl << "and dominant chords with '7'" << endl << endl;
-    cout << "Please express the tonic with just the letter of the chord" << endl << endl;
     
     cout << "These are all of the chord types supported at this time, but expansion will come!" << endl << endl;
     
     //Read in chords and tonic from the user and make sure their valid
-    string chord1; string chord2; string tonic;
+    string chord1; string chord2;
     cout << "Please enter chords: ";
     //A while loop allows us to keep prompting user for valid chords rather than fully
     //restarting the program if they enter an invalid chord
-    while (chord1 == "" || chord2 == "" || tonic == "") {
-        cin >> chord1 >> chord2 >> tonic;
-        if (!isValid(chord1) || !isValid(chord2) || !isValid(tonic)) {
+    while (chord1 == "" || chord2 == "") {
+        cin >> chord1 >> chord2;
+        if (!isValid(chord1) || !isValid(chord2)) {
             cout << "Please enter valid chords: ";
             chord1 = "";
             chord2 = "";
-            tonic = "";
         }
     }
     cout << endl;
     
     //now we can input these chords into our helper function to
     //determine the progression
-    determineProg(chord1, chord2, tonic);
+    determineProg(chord1, chord2);
     
     cout << "Thank you for using Theory Helper!" << endl << endl;
     

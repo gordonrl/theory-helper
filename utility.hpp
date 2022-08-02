@@ -39,7 +39,7 @@ void perfFourthProgs(string chord1Type, string chord2Key, string chord2Type);
 
 //EFFECTS: Determines the type of chord progression
 //will be split into multiple functions so I don't just have one crazy long function
-void determineProg(string chord1, string chord2, string tonic);
+void determineProg(string chord1, string chord2);
 
 
 

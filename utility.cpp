@@ -112,6 +112,15 @@ void majTwoFiveInfo(string chord2Key) {
             i = VALID_NOTES_SIZE;
         }
     }
+    //making key uppercase because major chords are uppercase
+    if (key.length() == 1) {
+        key = toupper(key[0]);
+    }
+    else {
+        char temp = key[1];
+        key = toupper(key[0]);
+        key += temp;
+    }
     
     //now we can cout cool stuff about a ii-V
     cout << "It looks like you have a major ii-V progression in the key of " << key << "!" << endl << endl;
@@ -128,11 +137,10 @@ void perfFourthProgs(string chord1Type, string chord2Key, string chord2Type) {
     return;
 }
 
-void determineProg(string chord1, string chord2, string tonic) {
-    //We need to get the key of the tonic, the key of the chords,
+void determineProg(string chord1, string chord2) {
+    //We need to get the key of the key of the chords,
     //the type of the chords (minor, major, etc.), and the interval
     //between the chords
-    string key = getKey(tonic);
     
     string chord1Type = determineChordType(chord1);
     string chord1Key = getKey(chord1);
@@ -142,7 +150,7 @@ void determineProg(string chord1, string chord2, string tonic) {
     
     string interval = determineInterval(chord1Key, chord2Key);
     
-    if (interval == "P4") {
+    if (interval == "P4" || interval == "P42") {
         return perfFourthProgs(chord1Type, chord2Key, chord2Type);
     }
     

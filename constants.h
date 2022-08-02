@@ -43,21 +43,21 @@ const string DOMINANT = "dominant";
 
 //Here are the acceptable chords/notes for checking
 const int VALID_NOTES_SIZE = 21;
-const string VALID_NOTES[] = {"c", "b#", "c#", "db", "d", "d#", "eb", "e", "fb", "f", "e#", "f#", "gb", "g", "g#", "ab", "a", "bb", "a#", "b", "cb"};
+const string VALID_NOTES[] = {"c", "b#", "db", "c#", "d", "eb", "d#", "e", "fb", "f", "e#", "f#", "gb", "g", "ab", "g#", "a", "bb", "a#", "b", "cb"};
 
 
 const int INTERVAL_ARR_SIZE = 21;
 //intervals for the key of C
 const map<string, string> C_NATURAL = {
-    {"c", "P1"}, {"b#", "P1"}, {"c#", "m2"}, {"db", "m2"}, {"d", "M2"}, {"d#", "m3"}, {"eb", "m3"},
-    {"e", "M3"}, {"fb", "M3"}, {"f", "P4"}, {"e#", "P4"}, {"f#", "T"}, {"gb", "T"}, {"g", "P5"},
+    {"c", "P1"}, {"b#", "P1"}, {"c#", "m2"}, {"db", "m2"}, {"d", "M"}, {"d#", "m3"}, {"eb", "m3"},
+    {"e", "M3"}, {"fb", "M3"}, {"f", "P4"}, {"e#", "P4"}, {"f#", "T"}, {"gb", "T2"}, {"g", "P5"},
     {"ab", "m6"}, {"g#", "m6"}, {"a", "M6"}, {"bb", "m7"}, {"a#", "m7"}, {"b", "M7"}, {"cb", "M7"}
 };
 
 //intervals for the key of B#
 const map<string, string> B_SHARP = {
     {"c", "P1"}, {"b#", "P1"}, {"c#", "m2"}, {"db", "m2"}, {"d", "M2"}, {"d#", "m3"}, {"eb", "m3"},
-    {"e", "M3"}, {"fb", "M3"}, {"e#", "P4"}, {"f", "P4"}, {"f#", "T"}, {"gb", "T"}, {"g", "P5"},
+    {"e", "M3"}, {"fb", "M3"}, {"e#", "P4"}, {"f", "P42"}, {"f#", "T"}, {"gb", "T"}, {"g", "P5"},
     {"ab", "m6"}, {"g#", "m6"}, {"a", "M6"}, {"bb", "m7"}, {"a#", "m7"}, {"b", "M7"}, {"cb", "M7"}
 };
 
