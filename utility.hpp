@@ -26,19 +26,21 @@ string determineChordType(string chord);
 bool isValid(string chord);
 
 //EFFECTS: Determines the interval between the two chords
-string determineInterval(string chord1, string chord2);
+string determineInterval(string chord1Key, string chord2Key);
+
+//EFFECTS: Outputs information about the major ii-V progression
+//note: only needs chord2Key because that can alone be used
+//to determine the key of the progression
+void majTwoFiveInfo(string chord2Key);
+
+//EFFECTS: determines progression for chords that move by a perfect fourth
+//REQUIRES: The chord arguments are a fourth apart
+void perfFourthProgs(string chord1Type, string chord2Key, string chord2Type);
 
 //EFFECTS: Determines the type of chord progression
 //will be split into multiple functions so I don't just have one crazy long function
-string determineProg(string chord1Type, string chord2Type, string interval);
+void determineProg(string chord1, string chord2, string tonic);
 
-//EFFECTS: Determiens the progression if the first chord is minor
-string determineMinorProg(string chord2Type, string interval);
 
-//EFFECTS: Determines the progression if the first chord is major
-string determineMajProg(string chord2Type, string interval);
-
-//EFFECTS: Determines the progression if the first chord is dominant
-string determineDomProj(string chord2Type, string interval);
 
 #endif /* utility_hpp */

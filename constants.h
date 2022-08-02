@@ -53,15 +53,13 @@ const map<string, string> C_NATURAL = {
     {"e", "M3"}, {"fb", "M3"}, {"f", "P4"}, {"e#", "P4"}, {"f#", "T"}, {"gb", "T"}, {"g", "P5"},
     {"ab", "m6"}, {"g#", "m6"}, {"a", "M6"}, {"bb", "m7"}, {"a#", "m7"}, {"b", "M7"}, {"cb", "M7"}
 };
-//const map<string, string> *C_NAT_PTR = C_NATURAL;
 
 //intervals for the key of B#
 const map<string, string> B_SHARP = {
     {"c", "P1"}, {"b#", "P1"}, {"c#", "m2"}, {"db", "m2"}, {"d", "M2"}, {"d#", "m3"}, {"eb", "m3"},
-    {"e", "M3"}, {"fb", "M3"}, {"f", "P4"}, {"e#", "P4"}, {"f#", "T"}, {"gb", "T"}, {"g", "P5"},
+    {"e", "M3"}, {"fb", "M3"}, {"e#", "P4"}, {"f", "P4"}, {"f#", "T"}, {"gb", "T"}, {"g", "P5"},
     {"ab", "m6"}, {"g#", "m6"}, {"a", "M6"}, {"bb", "m7"}, {"a#", "m7"}, {"b", "M7"}, {"cb", "M7"}
 };
-//const map<string, string> *B_SHARP_PTR = B_SHARP;
 
 //intervals for the key of C#
 const map<string, string> C_SHARP = {
@@ -69,15 +67,13 @@ const map<string, string> C_SHARP = {
     {"f", "M3"}, {"e#", "M3"}, {"f#", "P4"}, {"gb", "P4"}, {"g", "T"}, {"g#", "P5"}, {"ab", "P5"},
     {"a", "m6"}, {"a#", "M6"}, {"bb", "M6"}, {"b", "m7"}, {"cb", "m7"}, {"c", "M7"}, {"b#", "M7"}
 };
-//const map<string, string> *C_SHARP_PTR = C_SHARP;
 
 //intervals for the key of Db
 const map<string, string> D_FLAT = {
     {"c#", "P1"}, {"db", "P1"}, {"d", "m2"}, {"d#", "M2"}, {"eb", "M2"}, {"3", "m3"}, {"fb", "m3"},
-    {"f", "M3"}, {"e#", "M3"}, {"f#", "P4"}, {"gb", "P4"}, {"g", "T"}, {"g#", "P5"}, {"ab", "P5"},
+    {"f", "M3"}, {"e#", "M3"}, {"gb", "P4"}, {"f#", "P4"}, {"g", "T"}, {"g#", "P5"}, {"ab", "P5"},
     {"a", "m6"}, {"a#", "M6"}, {"bb", "M6"}, {"b", "m7"}, {"cb", "m7"}, {"c", "M7"}, {"b#", "M7"}
 };
-//const map<string, string> *D_FLAT_PTR = D_FLAT;
 
 //intervals for the key of D
 const map<string, string> D_NATURAL = {
@@ -85,7 +81,6 @@ const map<string, string> D_NATURAL = {
     {"f#", "M3"}, {"gb", "M3"}, {"g", "P4"}, {"g#", "T"}, {"ab", "T"}, {"a", "P5"}, {"a#", "m6"},
     {"bb", "m6"}, {"b", "M6"}, {"cb", "M6"}, {"b#", "m7"}, {"c", "m7"}, {"c#", "M7"}, {"db", "M7"}
 };
-//const map<string, string> *D_NAT_PTR = D_NATURAL;
 
 //intervals for the key of Eb
 const map<string, string> E_FLAT = {
@@ -93,15 +88,13 @@ const map<string, string> E_FLAT = {
     {"g", "M3"}, {"ab", "P4"}, {"g#", "P4"}, {"a", "T"}, {"bb", "P5"}, {"a#", "P5"}, {"b", "m6"},
     {"cb", "m6"}, {"c", "M6"}, {"b#", "M6"}, {"db", "m7"}, {"c#", "m7"}, {"d", "M7"}
 };
-//const map<string, string> *E_FLAT_PTR = E_FLAT;
 
 //intervals for the key of D#
 const map<string, string> D_SHARP = {
     {"eb", "P1"}, {"d#", "P1"}, {"e", "m2"}, {"fb", "m2"}, {"f", "M2"}, {"e#", "M2"}, {"f#", "m3"}, {"gb", "m3"},
-    {"g", "M3"}, {"ab", "P4"}, {"g#", "P4"}, {"a", "T"}, {"bb", "P5"}, {"a#", "P5"}, {"b", "m6"},
+    {"g", "M3"}, {"g#", "P4"}, {"ab", "P4"}, {"a", "T"}, {"bb", "P5"}, {"a#", "P5"}, {"b", "m6"},
     {"cb", "m6"}, {"c", "M6"}, {"b#", "M6"}, {"db", "m7"}, {"c#", "m7"}, {"d", "M7"}
 };
-//const map<string, string> *D_SHARP_PTR = D_SHARP;
 
 //intervals for the key of E
 const map<string, string> E_NATURAL = {
@@ -109,7 +102,6 @@ const map<string, string> E_NATURAL = {
     {"g#", "M3"}, {"ab", "M3"}, {"a", "P4"}, {"a#", "T"}, {"bb", "T"}, {"b", "P5"}, {"cb", "P5"}, {"c", "m6"},
     {"b#", "m6"}, {"c#", "M6"}, {"db", "M6"}, {"d", "m7"}, {"d#", "M7"}, {"eb", "M7"}
 };
-//const map<string, string> *E_NAT_PTR = E_NATURAL;
 
 //intervals for the key of Fb
 const map<string, string> F_FLAT = {
@@ -117,7 +109,6 @@ const map<string, string> F_FLAT = {
     {"g#", "M3"}, {"ab", "M3"}, {"a", "P4"}, {"a#", "T"}, {"bb", "T"}, {"b", "P5"}, {"cb", "P5"}, {"c", "m6"},
     {"b#", "m6"}, {"c#", "M6"}, {"db", "M6"}, {"d", "m7"}, {"d#", "M7"}, {"eb", "M7"}
 };
-//const map<string, string> *F_FLAT_PTR = F_FLAT;
 
 //intervals for the key of F
 const map<string, string> F_NATURAL = {
@@ -125,15 +116,13 @@ const map<string, string> F_NATURAL = {
     {"a", "M3"}, {"bb", "P4"}, {"a#", "P4"}, {"b", "T"}, {"cb", "T"}, {"c", "P5"}, {"b#", "P5"}, {"c#", "m6"},
     {"db", "m6"}, {"d", "M6"}, {"eb", "m7"}, {"d#", "m7"}, {"e", "M7"}, {"fb", "M7"}
 };
-//const map<string, string> *F_NAT_PTR = F_NATURAL;
 
 //intervals for the key of E#
 const map<string, string> E_SHARP = {
     {"f", "P1"}, {"e#", "P1"}, {"f#", "m2"}, {"gb", "m2"}, {"g", "M2"}, {"ab", "m3"}, {"g#", "m3"},
-    {"a", "M3"}, {"bb", "P4"}, {"a#", "P4"}, {"b", "T"}, {"cb", "T"}, {"c", "P5"}, {"b#", "P5"}, {"c#", "m6"},
+    {"a", "M3"}, {"a#", "P4"}, {"bb", "P4"}, {"b", "T"}, {"cb", "T"}, {"c", "P5"}, {"b#", "P5"}, {"c#", "m6"},
     {"db", "m6"}, {"d", "M6"}, {"eb", "m7"}, {"d#", "m7"}, {"e", "M7"}, {"fb", "M7"}
 };
-//const map<string, string> *E_SHARP_PTR = E_SHARP;
 
 //intervals for the key of F#
 const map<string, string> F_SHARP = {
@@ -141,15 +130,13 @@ const map<string, string> F_SHARP = {
     {"a#", "M3"}, {"b", "P4"}, {"cb", "P4"}, {"c", "T"}, {"b#", "T"}, {"c#", "P5"}, {"db", "P5"}, {"d", "m6"},
     {"eb", "M6"}, {"d#", "M6"}, {"e", "m7"}, {"fb", "m7"}, {"f", "M7"}, {"e#", "M7"}
 };
-//const map<string, string> *F_SHARP_PTR = F_SHARP;
 
 //intervals for the key of Gb
 const map<string, string> G_FLAT = {
     {"f#", "P1"}, {"gb", "P1"}, {"g", "m2"}, {"ab", "M2"}, {"g#", "M2"}, {"a", "m3"}, {"bb", "M3"},
-    {"a#", "M3"}, {"b", "P4"}, {"cb", "P4"}, {"c", "T"}, {"b#", "T"}, {"c#", "P5"}, {"db", "P5"}, {"d", "m6"},
+    {"a#", "M3"}, {"cb", "P4"}, {"b", "P4"}, {"c", "T"}, {"b#", "T"}, {"c#", "P5"}, {"db", "P5"}, {"d", "m6"},
     {"eb", "M6"}, {"d#", "M6"}, {"e", "m7"}, {"fb", "m7"}, {"f", "M7"}, {"e#", "M7"}
 };
-//const map<string, string> *G_FLAT_PTR = G_FLAT;
 
 //intervals for the key of G
 const map<string, string> G_NATURAL = {
@@ -157,15 +144,13 @@ const map<string, string> G_NATURAL = {
     {"cb", "M3"}, {"c", "P4"}, {"b#", "P4"}, {"c#", "T"}, {"db", "T"}, {"d", "P5"}, {"eb", "m6"}, {"d#", "m6"},
     {"e", "M6"}, {"fb", "M6"}, {"f", "m7"}, {"e#", "m7"}, {"f#", "M7"}, {"gb", "M7"}
 };
-//const map<string, string> *G_NAT_PTR = G_NATURAL;
 
 //intervals for the key of Ab
 const map<string, string> A_FLAT = {
     {"ab", "P1"}, {"g#", "P1"}, {"a", "m2"}, {"a#", "M2"}, {"bb", "M2"}, {"b", "m3"}, {"cb", "m3"}, {"c", "M3"},
-    {"b#", "M3"}, {"c#", "P4"}, {"db", "P4"}, {"d", "T"}, {"eb", "P5"}, {"d#", "P5"}, {"e", "m6"}, {"fb", "m6"},
+    {"b#", "M3"}, {"db", "P4"}, {"c#", "P4"}, {"d", "T"}, {"eb", "P5"}, {"d#", "P5"}, {"e", "m6"}, {"fb", "m6"},
     {"e#", "M6"}, {"f", "M6"}, {"f#", "m7"}, {"gb", "m7"}, {"g", "M7"}
 };
-//const map<string, string> *A_FLAT_PTR = A_FLAT;
 
 //intervals for the key of G#
 const map<string, string> G_SHARP = {
@@ -173,7 +158,6 @@ const map<string, string> G_SHARP = {
     {"b#", "M3"}, {"c#", "P4"}, {"db", "P4"}, {"d", "T"}, {"eb", "P5"}, {"d#", "P5"}, {"e", "m6"}, {"fb", "m6"},
     {"e#", "M6"}, {"f", "M6"}, {"f#", "m7"}, {"gb", "m7"}, {"g", "M7"}
 };
-//const map<string, string> *G_SHARP_PTR = G_SHARP;
 
 //intervals for the key of A
 const map<string, string> A_NATURAL = {
@@ -181,7 +165,6 @@ const map<string, string> A_NATURAL = {
     {"db", "M3"}, {"d", "P4"}, {"eb", "T"}, {"d#", "T"}, {"e", "P5"}, {"fb", "P5"}, {"e#", "m6"}, {"f", "m6"},
     {"f#", "M6"}, {"gb", "M6"}, {"g", "m7"}, {"g#", "M7"}, {"ab", "M7"}
 };
-//const map<string, string> *A_NAT_PTR = A_NATURAL;
 
 //intervals for the key of Bb
 const map<string, string> B_FLAT = {
@@ -189,15 +172,13 @@ const map<string, string> B_FLAT = {
     {"d", "M3"}, {"eb", "P4"}, {"d#", "P4"}, {"e", "T"}, {"fb", "T"}, {"f", "P5"}, {"gb", "m6"}, {"f#", "m6"}, {"g", "M6"},
     {"ab", "m7"}, {"g#", "m7"}, {"a", "M7"}
 };
-//const map<string, string> *B_FLAT_PTR = B_FLAT;
 
 //intervals for the key of A#
 const map<string, string> A_SHARP = {
     {"bb", "P1"}, {"a#", "P1"}, {"b", "m2"}, {"cb", "m2"}, {"c", "M2"}, {"b#", "M2"}, {"db", "m3"}, {"c#", "m3"},
-    {"d", "M3"}, {"eb", "P4"}, {"d#", "P4"}, {"e", "T"}, {"fb", "T"}, {"f", "P5"}, {"gb", "m6"}, {"f#", "m6"}, {"g", "M6"},
+    {"d", "M3"}, {"d#", "P4"}, {"eb", "P4"}, {"e", "T"}, {"fb", "T"}, {"f", "P5"}, {"gb", "m6"}, {"f#", "m6"}, {"g", "M6"},
     {"ab", "m7"}, {"g#", "m7"}, {"a", "M7"}
 };
-//const map<string, string> *A_SHARP_PTR = A_SHARP;
 
 //intervals for the key of B
 const map<string, string> B_NATURAL = {
@@ -205,15 +186,13 @@ const map<string, string> B_NATURAL = {
     {"eb", "M3"}, {"e", "P4"}, {"fb", "P4"}, {"e#", "T"}, {"f", "T"}, {"f#", "P5"}, {"gb", "P5"}, {"g", "m6"},
     {"g#", "M6"}, {"ab", "M6"}, {"a", "m7"}, {"a#", "M7"}, {"bb", "M7"}
 };
-//const map<string, string> *B_NAT_PTR = B_NATURAL;
 
 //intervals for the key of Cb
 const map<string, string> C_FLAT = {
     {"b", "P1"}, {"cb", "P1"}, {"b#", "m2"}, {"c", "m2"}, {"c#", "M2"}, {"db", "M2"}, {"d", "m3"}, {"d#", "M3"},
-    {"eb", "M3"}, {"e", "P4"}, {"fb", "P4"}, {"e#", "T"}, {"f", "T"}, {"f#", "P5"}, {"gb", "P5"}, {"g", "m6"},
+    {"eb", "M3"}, {"fb", "P4"}, {"e", "P4"}, {"e#", "T"}, {"f", "T"}, {"f#", "P5"}, {"gb", "P5"}, {"g", "m6"},
     {"g#", "M6"}, {"ab", "M6"}, {"a", "m7"}, {"a#", "M7"}, {"bb", "M7"}
 };
-//const map<string, string> *C_FLAT_PTR = C_FLAT;
 
 
 //Array of pairs and pointers so the program can find which array from above to us given a user-inputted string
