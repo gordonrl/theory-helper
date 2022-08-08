@@ -14,6 +14,7 @@
 #include <iostream>
 #include <map>
 #include <cctype>
+#include <cassert>
 #include "constants.h"
 
 using namespace std;
@@ -93,9 +94,8 @@ string determineInterval(string chord1Key, string chord2Key) {
     return interval;
 }
 
-void majTwoFiveInfo(string chord2Key) {
-    //first we need to find the key of the ii-V
-    //loop puts us in the right array
+string determineKey(string chord2Key, string interval, bool isMajor) {
+    //first we need to find the right array to use
     map<string, string> keyMap;
     for (int i = 0; i < INTERVAL_ARR_SIZE; i++) {
         if (chord2Key == ARRAY_KEY[i].first) {
@@ -103,26 +103,40 @@ void majTwoFiveInfo(string chord2Key) {
             i = INTERVAL_ARR_SIZE;
         }
     }
+    
+    //then we can find rhe right key using the given interval
     string key = "";
     //for a ii-V the tonic will just be a P4 from the second chord
     //and we can find that using the valid notes array and another for loop
     for (int i = 0; i < VALID_NOTES_SIZE; i++) {
-        if (keyMap[VALID_NOTES[i]] == "P4") {
+        //I don't include the Alternate perfect fourth because then the output could look
+        //weird because it could say something like d- G7 is a ii-V in b#, which is technically true,
+        //but no one would write it this way
+        if (keyMap[VALID_NOTES[i]] == interval) {
             key = VALID_NOTES[i];
             i = VALID_NOTES_SIZE;
         }
     }
-    //making key uppercase because major chords are uppercase
-    if (key.length() == 1) {
-        key = toupper(key[0]);
-    }
-    else {
-        char temp = key[1];
-        key = toupper(key[0]);
-        key += temp;
+    
+    //lastly we may need to make the key uppcase if it's major
+    if (isMajor) {
+        if (key.length() == 1) {
+            key = toupper(key[0]);
+        }
+        else {
+            char temp = key[1];
+            key = toupper(key[0]);
+            key += temp;
+        }
     }
     
-    //now we can cout cool stuff about a ii-V
+    return key;
+}
+
+void majTwoFive(string chord2Key) {
+    string intervalToKey = PERFECT_FOURTH;
+    string key = determineKey(chord2Key, intervalToKey, true);
+    //cout cool stuff about a ii-V
     cout << "It looks like you have a major ii-V progression in the key of " << key << "!" << endl << endl;
     cout << "A Dorian scale is typically used over the ii chord and a Mixolydian scale is typically used for the V chord!"
     << " This would be the same as playing the Ionian (major) scale in the key of " << key << " for the whole progression." << endl << endl;
@@ -130,9 +144,25 @@ void majTwoFiveInfo(string chord2Key) {
     return;
 }
 
+void majFiveOne(string chord2Key) {
+    string intervalToKey = UNISON;
+    string key = determineKey(chord2Key, intervalToKey, true);
+    //cout cool stuff about a V-i
+    cout << "It looks like you have a major V-I progression in the key of " << key << "!" << endl << endl;
+    cout << "A Mixolydian scale is typically used over the V chord and an Ionion (major) scale is typically used for the I chord!"
+    << " You can also use the " << key << " Ionian scale over the V as well." << endl << endl;
+}
+
 void perfFourthProgs(string chord1Type, string chord2Key, string chord2Type) {
+    //a minor chord to a dominant chord separated by a perfect fourth is
+    //ALWAYS a major ii-V
     if (chord1Type == MINOR && chord2Type == DOMINANT) {
-        majTwoFiveInfo(chord2Key);
+        majTwoFive(chord2Key);
+    }
+    //a dominant chord to a major chord separated by a perfect fourth is
+    //ALWAYS a major V-I
+    else if (chord1Type == DOMINANT && chord2Type == MAJOR) {
+        majFiveOne(chord2Key);
     }
     return;
 }
@@ -150,7 +180,7 @@ void determineProg(string chord1, string chord2) {
     
     string interval = determineInterval(chord1Key, chord2Key);
     
-    if (interval == "P4" || interval == "P42") {
+    if (interval == PERFECT_FOURTH || interval == ALT_PERFECT_FOURTH) {
         return perfFourthProgs(chord1Type, chord2Key, chord2Type);
     }
     

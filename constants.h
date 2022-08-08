@@ -56,9 +56,9 @@ const map<string, string> C_NATURAL = {
 
 //intervals for the key of B#
 const map<string, string> B_SHARP = {
-    {"c", "P1"}, {"b#", "P1"}, {"c#", "m2"}, {"db", "m2"}, {"d", "M2"}, {"d#", "m3"}, {"eb", "m3"},
-    {"e", "M3"}, {"fb", "M3"}, {"e#", "P4"}, {"f", "P42"}, {"f#", "T"}, {"gb", "T"}, {"g", "P5"},
-    {"ab", "m6"}, {"g#", "m6"}, {"a", "M6"}, {"bb", "m7"}, {"a#", "m7"}, {"b", "M7"}, {"cb", "M7"}
+    {"c", "P12"}, {"b#", "P1"}, {"c#", "m2"}, {"db", "m22"}, {"d", "M2"}, {"d#", "m3"}, {"eb", "m32"},
+    {"e", "M3"}, {"fb", "M32"}, {"e#", "P4"}, {"f", "P422"}, {"f#", "T"}, {"gb", "T2"}, {"g", "P5"},
+    {"ab", "m62"}, {"g#", "m6"}, {"a", "M6"}, {"bb", "m72"}, {"a#", "m7"}, {"b", "M7"}, {"cb", "M72"}
 };
 
 //intervals for the key of C#
@@ -70,7 +70,7 @@ const map<string, string> C_SHARP = {
 
 //intervals for the key of Db
 const map<string, string> D_FLAT = {
-    {"c#", "P1"}, {"db", "P12"}, {"d", "m2"}, {"d#", "M22"}, {"eb", "M2"}, {"e", "m32"}, {"fb", "m3"},
+    {"c#", "P12"}, {"db", "P1"}, {"d", "m2"}, {"d#", "M22"}, {"eb", "M2"}, {"e", "m32"}, {"fb", "m3"},
     {"f", "M3"}, {"e#", "M32"}, {"gb", "P4"}, {"f#", "P42"}, {"g", "T"}, {"g#", "P52"}, {"ab", "P5"},
     {"a", "m6"}, {"a#", "M62"}, {"bb", "M6"}, {"b", "m72"}, {"cb", "m7"}, {"c", "M7"}, {"b#", "M72"}
 };
@@ -91,9 +91,9 @@ const map<string, string> E_FLAT = {
 
 //intervals for the key of D#
 const map<string, string> D_SHARP = {
-    {"eb", "P1"}, {"d#", "P1"}, {"e", "m2"}, {"fb", "m2"}, {"f", "M2"}, {"e#", "M2"}, {"f#", "m3"}, {"gb", "m3"},
-    {"g", "M3"}, {"g#", "P4"}, {"ab", "P4"}, {"a", "T"}, {"bb", "P5"}, {"a#", "P5"}, {"b", "m6"},
-    {"cb", "m6"}, {"c", "M6"}, {"b#", "M6"}, {"db", "m7"}, {"c#", "m7"}, {"d", "M7"}
+    {"eb", "P12"}, {"d#", "P1"}, {"e", "m2"}, {"fb", "m22"}, {"f", "M22"}, {"e#", "M2"}, {"f#", "m3"}, {"gb", "m32"},
+    {"g", "M3"}, {"g#", "P4"}, {"ab", "P42"}, {"a", "T"}, {"bb", "P52"}, {"a#", "P5"}, {"b", "m6"},
+    {"cb", "m62"}, {"c", "M62"}, {"b#", "M6"}, {"db", "m72"}, {"c#", "m7"}, {"d", "M7"}
 };
 
 //intervals for the key of E
@@ -105,9 +105,9 @@ const map<string, string> E_NATURAL = {
 
 //intervals for the key of Fb
 const map<string, string> F_FLAT = {
-    {"e", "P1"}, {"fb", "P1"}, {"f", "m2"}, {"e#", "m2"}, {"f#", "M2"}, {"gb", "M2"}, {"g", "m3"},
-    {"g#", "M3"}, {"ab", "M3"}, {"a", "P4"}, {"a#", "T"}, {"bb", "T"}, {"b", "P5"}, {"cb", "P5"}, {"c", "m6"},
-    {"b#", "m6"}, {"c#", "M6"}, {"db", "M6"}, {"d", "m7"}, {"d#", "M7"}, {"eb", "M7"}
+    {"e", "P12"}, {"fb", "P1"}, {"f", "m2"}, {"e#", "m22"}, {"f#", "M22"}, {"gb", "M2"}, {"g", "m3"},
+    {"g#", "M32"}, {"ab", "M3"}, {"a", "P4"}, {"a#", "T2"}, {"bb", "T"}, {"b", "P52"}, {"cb", "P5"}, {"c", "m6"},
+    {"b#", "m62"}, {"c#", "M62"}, {"db", "M6"}, {"d", "m7"}, {"d#", "M72"}, {"eb", "M7"}
 };
 
 //intervals for the key of F
@@ -119,9 +119,9 @@ const map<string, string> F_NATURAL = {
 
 //intervals for the key of E#
 const map<string, string> E_SHARP = {
-    {"f", "P1"}, {"e#", "P1"}, {"f#", "m2"}, {"gb", "m2"}, {"g", "M2"}, {"ab", "m3"}, {"g#", "m3"},
-    {"a", "M3"}, {"a#", "P4"}, {"bb", "P4"}, {"b", "T"}, {"cb", "T"}, {"c", "P5"}, {"b#", "P5"}, {"c#", "m6"},
-    {"db", "m6"}, {"d", "M6"}, {"eb", "m7"}, {"d#", "m7"}, {"e", "M7"}, {"fb", "M7"}
+    {"f", "P12"}, {"e#", "P1"}, {"f#", "m2"}, {"gb", "m22"}, {"g", "M2"}, {"ab", "m32"}, {"g#", "m3"},
+    {"a", "M3"}, {"a#", "P4"}, {"bb", "P42"}, {"b", "T"}, {"cb", "T2"}, {"c", "P52"}, {"b#", "P5"}, {"c#", "m6"},
+    {"db", "m62"}, {"d", "M6"}, {"eb", "m72"}, {"d#", "m7"}, {"e", "M7"}, {"fb", "M72"}
 };
 
 //intervals for the key of F#
@@ -154,9 +154,9 @@ const map<string, string> A_FLAT = {
 
 //intervals for the key of G#
 const map<string, string> G_SHARP = {
-    {"ab", "P1"}, {"g#", "P1"}, {"a", "m2"}, {"a#", "M2"}, {"bb", "M2"}, {"b", "m3"}, {"cb", "m3"}, {"c", "M3"},
-    {"b#", "M3"}, {"c#", "P4"}, {"db", "P4"}, {"d", "T"}, {"eb", "P5"}, {"d#", "P5"}, {"e", "m6"}, {"fb", "m6"},
-    {"e#", "M6"}, {"f", "M6"}, {"f#", "m7"}, {"gb", "m7"}, {"g", "M7"}
+    {"ab", "P12"}, {"g#", "P1"}, {"a", "m2"}, {"a#", "M2"}, {"bb", "M22"}, {"b", "m3"}, {"cb", "m32"}, {"c", "M32"},
+    {"b#", "M3"}, {"c#", "P4"}, {"db", "P42"}, {"d", "T"}, {"eb", "P52"}, {"d#", "P5"}, {"e", "m6"}, {"fb", "m62"},
+    {"e#", "M6"}, {"f", "M62"}, {"f#", "m7"}, {"gb", "m72"}, {"g", "M7"}
 };
 
 //intervals for the key of A
@@ -169,15 +169,15 @@ const map<string, string> A_NATURAL = {
 //intervals for the key of Bb
 const map<string, string> B_FLAT = {
     {"bb", "P1"}, {"a#", "P12"}, {"b", "m22"}, {"cb", "m2"}, {"c", "M2"}, {"b#", "M22"}, {"db", "m3"}, {"c#", "m32"},
-    {"d", "M3"}, {"eb", "P4"}, {"d#", "P42"}, {"e", "T"}, {"fb", "T2"}, {"f", "P5"}, {"gb", "m6"}, {"f#", "m62"}, {"g", "M6"},
+    {"d", "M3"}, {"eb", "P4"}, {"d#", "P42"}, {"e", "T"}, {"fb", "T2"}, {"f", "P5"}, {"e#", "P52"}, {"gb", "m6"}, {"f#", "m62"}, {"g", "M6"},
     {"ab", "m7"}, {"g#", "m72"}, {"a", "M7"}
 };
 
 //intervals for the key of A#
 const map<string, string> A_SHARP = {
-    {"bb", "P1"}, {"a#", "P1"}, {"b", "m2"}, {"cb", "m2"}, {"c", "M2"}, {"b#", "M2"}, {"db", "m3"}, {"c#", "m3"},
-    {"d", "M3"}, {"d#", "P4"}, {"eb", "P4"}, {"e", "T"}, {"fb", "T"}, {"f", "P5"}, {"gb", "m6"}, {"f#", "m6"}, {"g", "M6"},
-    {"ab", "m7"}, {"g#", "m7"}, {"a", "M7"}
+    {"bb", "P12"}, {"a#", "P1"}, {"b", "m2"}, {"cb", "m22"}, {"c", "M22"}, {"b#", "M2"}, {"db", "m32"}, {"c#", "m3"},
+    {"d", "M3"}, {"d#", "P4"}, {"eb", "P42"}, {"e", "T"}, {"fb", "T2"}, {"f", "P52"}, {"e#", "P5"}, {"gb", "m62"}, {"f#", "m6"},
+    {"g", "M6"}, {"ab", "m72"}, {"g#", "m7"}, {"a", "M7"}
 };
 
 //intervals for the key of B
@@ -204,5 +204,32 @@ pair<string, map<string, string>> ARRAY_KEY[] = {
     {"gb", G_FLAT}, {"g", G_NATURAL}, {"g#", G_SHARP}, {"ab", A_FLAT}, {"a", A_NATURAL}, {"a#", A_SHARP},
     {"bb", B_FLAT}, {"b", B_NATURAL}, {"cb", C_FLAT}
 };
+
+//hopefully the last set of constants
+//here are constants for each interval name so we don't just have random "magic inputs" in the rest of the program
+const string UNISON = "P1";
+const string ALT_UNISON = "P12";
+const string MINOR_SECOND = "m2";
+const string ALT_MINOR_SECOND = "m22";
+const string MAJOR_SECOND = "M2";
+const string ALT_MAJOR_SECOND = "M22";
+const string MINOR_THIRD = "m3";
+const string ALT_MINOR_THIRD = "m32";
+const string MAJOR_THIRD = "M3";
+const string ALT_MAJOR_THIRD = "M32";
+const string PERFECT_FOURTH = "P4";
+const string ALT_PERFECT_FOURTH = "P42";
+const string TRITONE = "T";
+const string ALT_TRITONE = "T2";
+const string PERFECT_FIFTH = "P5";
+const string ALT_PERFECT_FIFTH = "P52";
+const string MINOR_SIXTH = "m6";
+const string ALT_MINOR_SIXTH = "m62";
+const string MAJOR_SIXTH = "M6";
+const string ALT_MAJOR_SIXTH = "M62";
+const string MINOR_SEVENTH = "m7";
+const string ALT_MINOR_SEVENTH = "m72";
+const string MAJOR_SEVENTH = "M7";
+const string ALT_MAJOR_SEVENTH = "M72";
 
 #endif /* intervals_h */
